@@ -38,30 +38,45 @@ enum customKeycodes {
 
 #endif
 
-#define SEND_STRING_DELAY 0
+#ifdef LARGE_FILE
+#include "large_file.h"
+#undef COND_KEY_1
+#define COND_KEY_1 SECRET_1
+#endif
+
+#define MACRO_DELAY 0
+
+// #define PSTR
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
+    switch (keycode) {
+#ifdef LARGE_FILE
+        case SECRET_1 ... SECRET_2:
+            if (record->event.pressed) {
+              send_string_P(LARGE_FILE_STR);
+            }
+            break;
+#else
 #ifdef USE_SECRETS
-    case SECRET_1 ... SECRET_2:
-      if (record->event.pressed) {
-        send_string_with_delay(SECRETS[keycode - SECRET_1], SEND_STRING_DELAY);
-      }      
-      break;
+        case SECRET_1 ... SECRET_2:
+            if (record->event.pressed) {
+              send_string_P(SECRETS[keycode - SECRET_1]);
+            }
+            break;
 #endif
-    case EML_B:
-      if (record->event.pressed) {
-        send_string_with_delay("ryan_greenblatt@brown.edu", SEND_STRING_DELAY);
-      }      
-      break;
-    case EML_P:
-      if (record->event.pressed) {
-        send_string_with_delay("greenblattryan@gmail.com", SEND_STRING_DELAY);
-      }      
-      break;
-
-  }
-  return true;
+#endif
+        case EML_B:
+            if (record->event.pressed) {
+                SEND_STRING("ryan_greenblatt@brown.edu");
+            }
+            break;
+        case EML_P:
+            if (record->event.pressed) {
+                SEND_STRING("greenblattryan@gmail.com");
+            }
+            break;
+    }
+    return true;
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -86,12 +101,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |       |                    |       |      |
  *                                 `--------------'                    `--------------'
  */
+#ifdef LARGE_FILE
+[BASE] = LAYOUT_gergo(
+    KC_TAB,          KC_Q, KC_W, KC_E, KC_R, KC_T,                                                      KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_BSPC,
+    KC_MINS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_LEFT,                                    KC_RIGHT,  KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
+    KC_LBRC, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_CAPS, COND_KEY_1,  KC_F11, KC_F8, KC_N, KC_M, KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,
+    KC_LCTL, KC_SPC, KC_ESC,        KC_DOWN, KC_UP,   KC_ENT, KC_LSHIFT, KC_RCTL
+    ),
+#else
 [BASE] = LAYOUT_gergo(
     KC_TAB,          KC_Q, KC_W, KC_E, KC_R, KC_T,                                                      KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_BSPC,
     LALT_T(KC_MINS), KC_A, KC_S, KC_D, KC_F, KC_G, KC_LEFT,                                    KC_RIGHT,  KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, RALT_T(KC_QUOT),
     LGUI_T(KC_LBRC), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_CAPS, TG(GAME_MODE),  KC_F11, KC_F8, KC_N, KC_M, KC_COMM, KC_DOT,  KC_SLSH, RGUI_T(KC_RBRC),
     LCTL_T(KC_EQL), LT(SY, KC_SPC), LT(FUNC_L, KC_ESC),        KC_DOWN, KC_UP,   LT(FUNC_L, KC_ENT), SFT_T(KC_SPC), RCTL_T(KC_BSLS)
     ),
+#endif
 /* Keymap 1: Symbols layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
