@@ -1,9 +1,9 @@
 #pragma once
 
 #define IGNORE_MOD_TAP_INTERRUPT
-#define USB_POLLING_INTERVAL_MS 2
+#define USB_POLLING_INTERVAL_MS 4
 
-#define LARGE_FILE
+/* #define LARGE_FILE */
 
 #ifdef LARGE_FILE
 #    define NO_ACTION_LAYER
