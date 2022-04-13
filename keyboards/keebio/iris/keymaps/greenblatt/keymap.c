@@ -5,6 +5,7 @@
 #define SY 1 // symbols
 #define FUNC_L 2 // function layer
 
+
 enum customKeycodes {
   SECRET_1 = SAFE_RANGE,
   SECRET_2,
@@ -71,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
-     LGUI_T(KC_LBRC), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_GRV,           KC_DEL,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RGUI_T(KC_RBRC),
+     LGUI_T(KC_LBRC), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    EML_P,           EML_B,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RGUI_T(KC_RBRC),
   //└────────────────┴─┬──────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴───┬────┴────────┼────────┴────────┴────────────────┘
                          LCTL_T(KC_EQL), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_SPC),  RCTL_T(KC_BSLS)
                   //   └────────────────┴───────────────┴────────────────────┘     └───────────────────┴────────────────┴───────────────┘
@@ -85,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_EXLM,  KC_AT,   KC_HASH, KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
-     LGUI_T(KC_LBRC), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_GRV,           KC_DEL,  KC_F6,   KC_F7,   KC_TILDE,KC_GRAVE,KC_PIPE, RGUI_T(KC_RBRC),
+     LGUI_T(KC_LBRC), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   EML_P,           EML_B,  KC_F6,   KC_F7,   KC_TILDE,KC_GRAVE,KC_PIPE, RGUI_T(KC_RBRC),
   //└────────────────┴─┬──────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴───┬────┴────────┼────────┴────────┴────────────────┘
                          LCTL_T(KC_EQL), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_SPC),  RCTL_T(KC_BSLS)
                   //   └────────────────┴───────────────┴────────────────────┘     └───────────────────┴────────────────┴───────────────┘
