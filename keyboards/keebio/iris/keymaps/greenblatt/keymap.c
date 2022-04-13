@@ -66,43 +66,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE] = LAYOUT(
   //┌────────────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────────────┐
-     KC_ESC,           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_NO,           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
-     KC_TAB,           KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+     KC_NO,           KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
-     LGUI_T(KC_LBRC), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    EML_P,           EML_B,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RGUI_T(KC_RBRC),
+     KC_NO,           KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    EML_P,           EML_B,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_NO,
   //└────────────────┴─┬──────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴───┬────┴────────┼────────┴────────┴────────────────┘
-                         LCTL_T(KC_EQL), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_SPC),  RCTL_T(KC_BSLS)
+                         LGUI_T(KC_TAB), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_BSPC),  RCTL_T(KC_EQL)
                   //   └────────────────┴───────────────┴────────────────────┘     └───────────────────┴────────────────┴───────────────┘
   ),
 
   [SY] = LAYOUT(
   //┌────────────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────────────┐
-     KC_ESC,           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_NO,           KC_NO,    KC_NO,  KC_NO,    KC_NO,    KC_NO,                            KC_NO,    KC_NO,    KC_NO,  KC_NO,  KC_NO,   KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
-     KC_TAB,           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_NO,           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_EXLM,  KC_AT,   KC_HASH, KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
-     LGUI_T(KC_LBRC), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   EML_P,           EML_B,  KC_F6,   KC_F7,   KC_TILDE,KC_GRAVE,KC_PIPE, RGUI_T(KC_RBRC),
+     KC_NO,           KC_NO,    KC_LBRC, KC_RBRC, KC_PIPE, KC_BSLS,   EML_P,            EML_B, KC_GRAVE,KC_TILDE,KC_LCBR, KC_RCBR, KC_PLUS, KC_NO,
   //└────────────────┴─┬──────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴───┬────┴────────┼────────┴────────┴────────────────┘
-                         LCTL_T(KC_EQL), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_SPC),  RCTL_T(KC_BSLS)
+                         LGUI_T(KC_TAB), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_BSPC),  RCTL_T(KC_EQL)
                   //   └────────────────┴───────────────┴────────────────────┘     └───────────────────┴────────────────┴───────────────┘
   ),
 
   [FUNC_L] = LAYOUT(
   //┌────────────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────────────┐
-     KC_ESC,           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+     KC_NO,           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
-     KC_TAB,          LGUI(KC_1),LGUI(KC_2),LGUI(KC_3),LGUI(KC_4),LGUI(KC_5),                LGUI(KC_6),LGUI(KC_7),LGUI(KC_8),LGUI(KC_9),LGUI(KC_0),KC_BSPC,
+     KC_NO,          LGUI(KC_1),LGUI(KC_2),LGUI(KC_3),LGUI(KC_4),LGUI(KC_5),                LGUI(KC_6),LGUI(KC_7),LGUI(KC_8),LGUI(KC_9),LGUI(KC_0),KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_PGUP, KC_PGDOWN, LCTL(KC_U), LCTL(KC_D), KC_PERC,                     KC_LEFT,   KC_DOWN, KC_UP, KC_RIGHT,  KC_RPRN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
-     LGUI_T(KC_LBRC), SGUI(KC_Z),SGUI(KC_X),SGUI(KC_M),SGUI(KC_V),  LGUI(KC_SCLN),   EML_P, EML_B, KC_LEFT,   KC_DOWN, KC_UP, KC_RIGHT, KC_F9, RGUI_T(KC_RBRC),
+     KC_NO,           SGUI(KC_Z),SGUI(KC_X),SGUI(KC_M),SGUI(KC_V),  LGUI(KC_SCLN),   EML_P, EML_B, KC_LEFT,   KC_DOWN, KC_UP, KC_RIGHT, LSFT(KC_ENT), KC_NO,
   //└────────────────┴─┬──────┴────────┴────────┴────────┴────────┴────────┘        └────────┴────────┴───┬────┴────────┼────────┴────────┴────────────────┘
-                         LCTL_T(KC_EQL), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_SPC),  RCTL_T(KC_BSLS)
+                         LGUI_T(KC_TAB), LT(SY, KC_SPC),  LT(FUNC_L, KC_ESC),       LT(FUNC_L, KC_ENT),  SFT_T(KC_BSPC),  RCTL_T(KC_EQL)
                   //   └────────────────┴───────────────┴────────────────────┘     └───────────────────┴────────────────┴───────────────┘
   ),
 };
