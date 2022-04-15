@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────────────┐
      KC_NO,           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
-     KC_NO,          LGUI(KC_1),LGUI(KC_2),LGUI(KC_3),LGUI(KC_4),LGUI(KC_5),                LGUI(KC_6),LGUI(KC_7),LGUI(KC_8),LGUI(KC_9),LGUI(KC_0),KC_NO,
+     KC_NO,          LGUI(KC_1),LGUI(KC_2),LGUI(KC_3),LGUI(KC_4),LGUI(KC_5),                  SGUI(KC_1),SGUI(KC_2),SGUI(KC_3),SGUI(KC_4),SGUI(KC_5),KC_NO,
   //├────────────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────────────┤
      LALT_T(KC_MINS), KC_PGUP, KC_PGDOWN, LCTL(KC_U), LCTL(KC_D), KC_PERC,                     KC_LEFT,   KC_DOWN, KC_UP, KC_RIGHT,  KC_RPRN, RALT_T(KC_QUOT),
   //├────────────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
