@@ -1,5 +1,2 @@
 // List any combo dictionaries you want loaded to your device below!
 
-COMB(opESC,    KC_ESC,          KC_J, KC_K)
-COMB(opTAB,    KC_TAB,          KC_K, KC_L)
-COMB(opBSPC,    KC_BSPC,          KC_F, KC_D)
