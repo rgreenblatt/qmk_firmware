@@ -20,27 +20,12 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "g/keymap_combo.h"
 
 enum {
   _BASE, // default layer
   _SY, // symbols
   _FUNC_L, // function layer
 };
-
-    /* Combomap
-     *
-     * ,-------------------------------.      ,-------------------------------.
-     * |       |    ESC    |     |     |      |     |    ESC    |     \       |
-     * |-------+-----+-----+-----+-----|      |-----+-----+-----+-----+-------|
-     * |       |   BSPC   TAB    |     |      |     <     :     >     |       |
-     * |-------+-----+-----+-RMB-+-LMB-|      |ENTER+-----+-----+-----+-------|
-     * |       |     -   ENTER   |     |      |     '     _     |     |       |
-     * `-------------------------------'      `-------------------------------'
-     *            .-----------------.            .-----------------.
-     *            |     |     |     |            |     |     |     |
-     *            '-----------------'            '-----------------'
-     */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 0: Alpha layer
@@ -96,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_FUNC_L] = LAYOUT_split_3x5_3(
     LGUI(KC_1),LGUI(KC_2),LGUI(KC_3),LGUI(KC_4),LGUI(KC_5),                  SGUI(KC_1),SGUI(KC_2),SGUI(KC_3),SGUI(KC_4),SGUI(KC_5)  ,
-    KC_PGUP, KC_PGDOWN, LCTL(KC_U), LCTL(KC_D), KC_PIPE,                     LALT(KC_H),   LALT(KC_J), LALT(KC_K), LALT(KC_L),  KC_NO,
+    KC_PGUP, KC_PGDN, LCTL(KC_U), LCTL(KC_D), KC_PIPE,                     LALT(KC_H),   LALT(KC_J), LALT(KC_K), LALT(KC_L),  KC_NO,
     KC_BSLS,KC_GRAVE,KC_PIPE,SGUI(KC_V),  LGUI(KC_SCLN),                     KC_LEFT,   KC_DOWN, KC_UP, KC_RIGHT, LSFT(KC_ENT),
     LGUI_T(KC_TAB), LT(_SY, KC_SPC),  LT(_FUNC_L, KC_ESC), LT(_FUNC_L, KC_ENT),  SFT_T(KC_BSPC),  RCTL_T(KC_EQL)),
 };
